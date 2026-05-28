@@ -1,4 +1,3 @@
-
 name: Build Windows EXE
 
 on:
@@ -10,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -46,4 +47,3 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: FlameHeightAnalysis-Windows.zip
-          generate_release_notes: true
